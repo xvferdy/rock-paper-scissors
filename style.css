@@ -88,7 +88,7 @@ img {
 .kertas {
     transition: .3s;
     position: relative;
-    top: 0;
+
     cursor: pointer;
 }
 
@@ -96,11 +96,11 @@ img {
 .batu:hover,
 .kertas:hover,
 .active {
-    box-shadow: 0 0 10px 5px limegreen;
+    box-shadow: 0 0 10px 5px violet;
 }
 
 .gunting:active,
 .batu:active,
 .kertas:active {
-    top: 2px;
+    bottom: 7px;
 }

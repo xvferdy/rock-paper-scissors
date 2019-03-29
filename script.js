@@ -31,6 +31,16 @@ pilihan.forEach(function (i) {
         var pilihanPlayer = i.className;
         var hasil = getHasil(pilihanKomputer, pilihanPlayer);
         imgComputer.setAttribute('src', 'images/' + pilihanKomputer + '.png');
+        info.classList.add('animated', 'bounceIn');
+        info.addEventListener('animationend', function () {
+            doSomething();
+        });
+
         info.innerHTML = hasil;
     })
-})
+});
+
+//reset class's animation
+function doSomething() {
+    info.classList.remove('animated', 'bounceIn');
+}
