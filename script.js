@@ -30,7 +30,7 @@ pilihan.forEach(function (i) {
         var pilihanKomputer = getpilihankomputer()
         var pilihanPlayer = i.className;
         var hasil = getHasil(pilihanKomputer, pilihanPlayer);
-        imgComputer.setAttribute('src', 'images/' + pilihanKomputer + '.png');
+        imgComputer.setAttribute('src', 'images/' + pilihanKomputer + '.PNG');
         info.classList.add('animated', 'bounceIn');
         info.addEventListener('animationend', function () {
             doSomething();
