@@ -21,10 +21,11 @@ function getHasil(comp, player) {
 
 //event
 //menangkap element
+
 var imgComputer = document.querySelector('.img-komputer');
 var info = document.querySelector('.info');
 var pilihan = document.querySelectorAll('li img');
-//jalankan event
+// //jalankan event
 pilihan.forEach(function (i) {
     i.addEventListener('click', function () {
         var pilihanKomputer = getpilihankomputer()
@@ -44,3 +45,15 @@ pilihan.forEach(function (i) {
 function doSomething() {
     info.classList.remove('animated', 'bounceIn');
 }
+
+//untuk mousedown mouseup opacity
+var pilihanHover = document.querySelectorAll('li');
+pilihanHover.forEach(function (i) {
+    i.addEventListener('mousedown', function () {
+        i.classList.add('playing');
+    });
+
+    i.addEventListener('mouseup', function () {
+        i.classList.remove('playing');
+    });
+});
