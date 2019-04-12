@@ -21,10 +21,10 @@ function getHasil(comp, player) {
 
 //event
 //menangkap element
-
 var imgComputer = document.querySelector('.img-komputer');
 var info = document.querySelector('.info');
 var pilihan = document.querySelectorAll('li img');
+
 // //jalankan event
 pilihan.forEach(function (i) {
     i.addEventListener('click', function () {
@@ -32,18 +32,38 @@ pilihan.forEach(function (i) {
         var pilihanPlayer = i.className;
         var hasil = getHasil(pilihanKomputer, pilihanPlayer);
         imgComputer.setAttribute('src', 'images/' + pilihanKomputer + '.PNG');
-        info.classList.add('animated', 'bounceIn');
-        info.addEventListener('animationend', function () {
-            doSomething();
-        });
+
+        animasiSkor();
+        animasiComp();
 
         info.innerHTML = hasil;
-    })
+    });
 });
+
+//animasi skor
+function animasiSkor() {
+    info.classList.add('animated', 'bounceIn');
+    info.addEventListener('animationend', function () {
+        doSomething();
+    });
+}
+
+//animasi gambar komputer
+function animasiComp() {
+    imgComputer.classList.add('animated', 'flipInY');
+    imgComputer.addEventListener('animationend', function () {
+        doSomething2();
+    });
+}
 
 //reset class's animation
 function doSomething() {
     info.classList.remove('animated', 'bounceIn');
+}
+
+//reset class's animation
+function doSomething2() {
+    imgComputer.classList.remove('animated', 'flipInY');
 }
 
 //untuk mousedown mouseup opacity
